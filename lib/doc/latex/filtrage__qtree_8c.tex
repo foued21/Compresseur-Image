@@ -1,0 +1,77 @@
+\doxysection{src/filtrage\+\_\+qtree.c File Reference}
+\hypertarget{filtrage__qtree_8c}{}\label{filtrage__qtree_8c}\index{src/filtrage\_qtree.c@{src/filtrage\_qtree.c}}
+
+
+Application de filtres sur des Quad\+Trees.  
+
+
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}../include/quadtree.\+h"{}}\newline
+Include dependency graph for filtrage\+\_\+qtree.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{filtrage__qtree_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{filtrage__qtree_8c_a40355e2fe72532928c06390e9c7141ef}{filtrage}} (\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}tree, int index, double sigma, double alpha)
+\begin{DoxyCompactList}\small\item\em Filtre un noeud et ses descendants dans le \doxylink{structQuadTree}{Quad\+Tree}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{filtrage__qtree_8c_a5af84d7d1e39b7a12f7172fac9d20d93}{appliquer\+\_\+filtrage}} (\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}tree, double alpha)
+\begin{DoxyCompactList}\small\item\em Applique un filtrage adaptatif sur un \doxylink{structQuadTree}{Quad\+Tree}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Application de filtres sur des Quad\+Trees. 
+
+Fournit des fonctions pour filtrer et simplifier les Quad\+Trees en fonction de la variance des blocs. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{filtrage__qtree_8c_a5af84d7d1e39b7a12f7172fac9d20d93}\label{filtrage__qtree_8c_a5af84d7d1e39b7a12f7172fac9d20d93} 
+\index{filtrage\_qtree.c@{filtrage\_qtree.c}!appliquer\_filtrage@{appliquer\_filtrage}}
+\index{appliquer\_filtrage@{appliquer\_filtrage}!filtrage\_qtree.c@{filtrage\_qtree.c}}
+\doxysubsubsection{\texorpdfstring{appliquer\_filtrage()}{appliquer\_filtrage()}}
+{\footnotesize\ttfamily void appliquer\+\_\+filtrage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}}]{tree,  }\item[{double}]{alpha }\end{DoxyParamCaption})}
+
+
+
+Applique un filtrage adaptatif sur un \doxylink{structQuadTree}{Quad\+Tree}. 
+
+Cette fonction parcourt le \doxylink{structQuadTree}{Quad\+Tree} et effectue un filtrage des noeuds internes en fonction de leur variance et d\textquotesingle{}un paramètre alpha. Elle calcule d\textquotesingle{}abord des statistiques globales (variance moyenne et maximale) pour déterminer un seuil initial ({\ttfamily sigma}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & Le \doxylink{structQuadTree}{Quad\+Tree} à filtrer. \\
+\hline
+{\em alpha} & Le paramètre d\textquotesingle{}atténuation du seuil {\ttfamily sigma}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{filtrage__qtree_8c_a40355e2fe72532928c06390e9c7141ef}\label{filtrage__qtree_8c_a40355e2fe72532928c06390e9c7141ef} 
+\index{filtrage\_qtree.c@{filtrage\_qtree.c}!filtrage@{filtrage}}
+\index{filtrage@{filtrage}!filtrage\_qtree.c@{filtrage\_qtree.c}}
+\doxysubsubsection{\texorpdfstring{filtrage()}{filtrage()}}
+{\footnotesize\ttfamily static int filtrage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}}]{tree,  }\item[{int}]{index,  }\item[{double}]{sigma,  }\item[{double}]{alpha }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Filtre un noeud et ses descendants dans le \doxylink{structQuadTree}{Quad\+Tree}. 
+
+Cette fonction parcourt récursivement les noeuds descendants d\textquotesingle{}un noeud donné et applique un filtrage en fonction de leur variance. Les noeuds homogènes (dont tous les enfants répondent aux critères) sont marqués comme uniformes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & Le \doxylink{structQuadTree}{Quad\+Tree} à filtrer. \\
+\hline
+{\em index} & L\textquotesingle{}index du noeud actuel dans le \doxylink{structQuadTree}{Quad\+Tree}. \\
+\hline
+{\em sigma} & Le seuil de variance pour ce noeud. \\
+\hline
+{\em alpha} & Le paramètre d\textquotesingle{}atténuation du seuil. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si le noeud est marqué comme uniforme, sinon 0. 
+\end{DoxyReturn}

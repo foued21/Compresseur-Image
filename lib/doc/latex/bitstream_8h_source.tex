@@ -1,0 +1,23 @@
+\doxysection{bitstream.\+h}
+\hypertarget{bitstream_8h_source}{}\label{bitstream_8h_source}\index{include/bitstream.h@{include/bitstream.h}}
+\mbox{\hyperlink{bitstream_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ BITSTREAM\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ BITSTREAM\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <limits.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ ptr;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ capa;}
+\DoxyCodeLine{00016\ \}\ \mbox{\hyperlink{structBitStream}{BitStream}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{bitstream_8h_a9e85ac9e97e6a4f09f6ed47f59fdc748}{pushbits}}(\mbox{\hyperlink{structBitStream}{BitStream}}*\ curr,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ src,\ \textcolor{keywordtype}{size\_t}\ nbit);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{bitstream_8h_a219aaf9cd1c5ad28dd4169ed6f6d350d}{pullbits}}(\mbox{\hyperlink{structBitStream}{BitStream}}*\ curr,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ dest,\ \textcolor{keywordtype}{size\_t}\ nbit);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BITSTREAM\_H}}
+
+\end{DoxyCode}

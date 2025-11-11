@@ -1,0 +1,61 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Class Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Class List}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}File Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}File List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Documentation}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Bit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stream Struct Reference}{5}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Pixmap Struct Reference}{5}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Detailed Description}{5}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Member Data Documentation}{6}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}height}{6}{subsubsection.3.2.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}pixels}{6}{subsubsection.3.2.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.3}width}{6}{subsubsection.3.2.2.3}%
+\contentsline {section}{\numberline {3.3}Quad\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Node Struct Reference}{6}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Detailed Description}{6}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Member Data Documentation}{7}{subsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.2.1}epsilon}{7}{subsubsection.3.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.3.2.2}m}{7}{subsubsection.3.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.3.2.3}u}{7}{subsubsection.3.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.3.2.4}v}{7}{subsubsection.3.3.2.4}%
+\contentsline {section}{\numberline {3.4}Quad\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tree Struct Reference}{7}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Detailed Description}{8}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Member Data Documentation}{8}{subsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.1}depth}{8}{subsubsection.3.4.2.1}%
+\contentsline {subsubsection}{\numberline {3.4.2.2}nodes}{8}{subsubsection.3.4.2.2}%
+\contentsline {subsubsection}{\numberline {3.4.2.3}total\_nodes}{8}{subsubsection.3.4.2.3}%
+\contentsline {chapter}{\numberline {4}File Documentation}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}include/bitstream.h File Reference}{9}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{10}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Function Documentation}{10}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}pullbits()}{10}{subsubsection.4.1.2.1}%
+\contentsline {subsubsection}{\numberline {4.1.2.2}pushbits()}{10}{subsubsection.4.1.2.2}%
+\contentsline {section}{\numberline {4.2}bitstream.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{11}{section.4.2}%
+\contentsline {section}{\numberline {4.3}include/pixmap.h File Reference}{11}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{12}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Function Documentation}{12}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}liberer\_pixmap()}{12}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}pgm\_vers\_pixmap()}{12}{subsubsection.4.3.2.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.3}pixmap\_vers\_pgm()}{13}{subsubsection.4.3.2.3}%
+\contentsline {section}{\numberline {4.4}pixmap.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{13}{section.4.4}%
+\contentsline {section}{\numberline {4.5}include/qtc.h File Reference}{13}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{13}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Function Documentation}{14}{subsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.1}coder\_fichier()}{14}{subsubsection.4.5.2.1}%
+\contentsline {subsubsection}{\numberline {4.5.2.2}decoder\_fichier()}{14}{subsubsection.4.5.2.2}%
+\contentsline {section}{\numberline {4.6}qtc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{14}{section.4.6}%
+\contentsline {section}{\numberline {4.7}include/quadtree.h File Reference}{15}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Detailed Description}{16}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Function Documentation}{16}{subsection.4.7.2}%
+\contentsline {subsubsection}{\numberline {4.7.2.1}appliquer\_filtrage()}{16}{subsubsection.4.7.2.1}%
+\contentsline {subsubsection}{\numberline {4.7.2.2}construire\_quadtree()}{16}{subsubsection.4.7.2.2}%
+\contentsline {subsubsection}{\numberline {4.7.2.3}creer\_quadtree()}{17}{subsubsection.4.7.2.3}%
+\contentsline {subsubsection}{\numberline {4.7.2.4}liberer\_quadtree()}{17}{subsubsection.4.7.2.4}%
+\contentsline {subsubsection}{\numberline {4.7.2.5}quadtree\_vers\_pixmap()}{17}{subsubsection.4.7.2.5}%
+\contentsline {section}{\numberline {4.8}quadtree.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{18}{section.4.8}%
+\contentsline {section}{\numberline {4.9}include/segmentation.h File Reference}{18}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Detailed Description}{19}{subsection.4.9.1}%
+\contentsline {subsection}{\numberline {4.9.2}Function Documentation}{19}{subsection.4.9.2}%
+\contentsline {subsubsection}{\numberline {4.9.2.1}generer\_grille\_segmentation()}{19}{subsubsection.4.9.2.1}%
+\contentsline {section}{\numberline {4.10}segmentation.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{20}{section.4.10}%
+\contentsline {chapter}{Index}{21}{section*.19}%

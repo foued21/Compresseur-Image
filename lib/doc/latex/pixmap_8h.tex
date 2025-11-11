@@ -1,0 +1,92 @@
+\doxysection{include/pixmap.h File Reference}
+\hypertarget{pixmap_8h}{}\label{pixmap_8h}\index{include/pixmap.h@{include/pixmap.h}}
+
+
+Manipulation d\textquotesingle{}images en niveaux de gris (\doxylink{structPixmap}{Pixmap}).  
+
+
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{pixmap_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structPixmap}{Pixmap}}
+\begin{DoxyCompactList}\small\item\em Structure représentant une image en niveaux de gris (\doxylink{structPixmap}{Pixmap}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{pixmap_8h_a07875707d82031882b8a8a846bc1de9c}{pgm\+\_\+vers\+\_\+pixmap}} (const char \texorpdfstring{$\ast$}{*}fichier)
+\begin{DoxyCompactList}\small\item\em Convertit un fichier PGM en une \doxylink{structPixmap}{Pixmap}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pixmap_8h_a351d61360bbd68e57ff25f938c44ea76}{pixmap\+\_\+vers\+\_\+pgm}} (const char \texorpdfstring{$\ast$}{*}fichier, const \mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*}pixmap)
+\begin{DoxyCompactList}\small\item\em Sauvegarde une \doxylink{structPixmap}{Pixmap} au format PGM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pixmap_8h_a91f3aca3fc911299092248b3ff9b97e0}{liberer\+\_\+pixmap}} (\mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*}pixmap)
+\begin{DoxyCompactList}\small\item\em Libère la mémoire allouée pour une \doxylink{structPixmap}{Pixmap}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manipulation d\textquotesingle{}images en niveaux de gris (\doxylink{structPixmap}{Pixmap}). 
+
+Ce fichier contient la définition de la structure {\ttfamily \doxylink{structPixmap}{Pixmap}} et les fonctions associées pour convertir entre le format PGM et la structure \doxylink{structPixmap}{Pixmap}, ainsi que pour libérer la mémoire associée. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pixmap_8h_a91f3aca3fc911299092248b3ff9b97e0}\label{pixmap_8h_a91f3aca3fc911299092248b3ff9b97e0} 
+\index{pixmap.h@{pixmap.h}!liberer\_pixmap@{liberer\_pixmap}}
+\index{liberer\_pixmap@{liberer\_pixmap}!pixmap.h@{pixmap.h}}
+\doxysubsubsection{\texorpdfstring{liberer\_pixmap()}{liberer\_pixmap()}}
+{\footnotesize\ttfamily void liberer\+\_\+pixmap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*}}]{pixmap }\end{DoxyParamCaption})}
+
+
+
+Libère la mémoire allouée pour une \doxylink{structPixmap}{Pixmap}. 
+
+Cette fonction libère la mémoire associée à une structure \doxylink{structPixmap}{Pixmap}, y compris le tableau de pixels.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pixmap} & La \doxylink{structPixmap}{Pixmap} à libérer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pixmap_8h_a07875707d82031882b8a8a846bc1de9c}\label{pixmap_8h_a07875707d82031882b8a8a846bc1de9c} 
+\index{pixmap.h@{pixmap.h}!pgm\_vers\_pixmap@{pgm\_vers\_pixmap}}
+\index{pgm\_vers\_pixmap@{pgm\_vers\_pixmap}!pixmap.h@{pixmap.h}}
+\doxysubsubsection{\texorpdfstring{pgm\_vers\_pixmap()}{pgm\_vers\_pixmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*} pgm\+\_\+vers\+\_\+pixmap (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{fichier }\end{DoxyParamCaption})}
+
+
+
+Convertit un fichier PGM en une \doxylink{structPixmap}{Pixmap}. 
+
+Cette fonction lit un fichier PGM et charge son contenu dans une structure \doxylink{structPixmap}{Pixmap}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fichier} & Chemin du fichier PGM à lire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers la \doxylink{structPixmap}{Pixmap} créée ou NULL en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
+\Hypertarget{pixmap_8h_a351d61360bbd68e57ff25f938c44ea76}\label{pixmap_8h_a351d61360bbd68e57ff25f938c44ea76} 
+\index{pixmap.h@{pixmap.h}!pixmap\_vers\_pgm@{pixmap\_vers\_pgm}}
+\index{pixmap\_vers\_pgm@{pixmap\_vers\_pgm}!pixmap.h@{pixmap.h}}
+\doxysubsubsection{\texorpdfstring{pixmap\_vers\_pgm()}{pixmap\_vers\_pgm()}}
+{\footnotesize\ttfamily void pixmap\+\_\+vers\+\_\+pgm (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{fichier,  }\item[{const \mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*}}]{pixmap }\end{DoxyParamCaption})}
+
+
+
+Sauvegarde une \doxylink{structPixmap}{Pixmap} au format PGM. 
+
+Cette fonction écrit les données d\textquotesingle{}une structure \doxylink{structPixmap}{Pixmap} dans un fichier PGM.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fichier} & Chemin du fichier PGM à créer. \\
+\hline
+{\em pixmap} & La \doxylink{structPixmap}{Pixmap} contenant les données à sauvegarder. \\
+\hline
+\end{DoxyParams}

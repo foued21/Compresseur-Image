@@ -1,0 +1,5 @@
+<map id="include/qtc.h" name="include/qtc.h">
+<area shape="rect" id="Node000001" title="Interface pour le codage des fichiers PGM en QTC et le décodage des fichiers QTC en PGM." alt="" coords="5,5,111,31"/>
+<area shape="rect" id="Node000002" href="$main_8c.html" title="Point d&#39;entrée principal du programme." alt="" coords="13,79,103,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,44,61,79,55,79,55,44"/>
+</map>

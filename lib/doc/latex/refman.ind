@@ -1,0 +1,138 @@
+\begin{theindex}
+
+  \item {appliquer\_filtrage}
+    \subitem {quadtree.h}, \hyperpage{16}
+
+  \indexspace
+
+  \item {BitStream}, \hyperpage{5}
+  \item {bitstream.h}
+    \subitem {pullbits}, \hyperpage{10}
+    \subitem {pushbits}, \hyperpage{10}
+
+  \indexspace
+
+  \item {coder\_fichier}
+    \subitem {qtc.h}, \hyperpage{14}
+  \item {construire\_quadtree}
+    \subitem {quadtree.h}, \hyperpage{16}
+  \item {creer\_quadtree}
+    \subitem {quadtree.h}, \hyperpage{17}
+
+  \indexspace
+
+  \item {decoder\_fichier}
+    \subitem {qtc.h}, \hyperpage{14}
+  \item {depth}
+    \subitem {QuadTree}, \hyperpage{8}
+
+  \indexspace
+
+  \item {epsilon}
+    \subitem {QuadNode}, \hyperpage{7}
+
+  \indexspace
+
+  \item {generer\_grille\_segmentation}
+    \subitem {segmentation.h}, \hyperpage{19}
+
+  \indexspace
+
+  \item {height}
+    \subitem {Pixmap}, \hyperpage{6}
+
+  \indexspace
+
+  \item {include/bitstream.h}, \hyperpage{9}, \hyperpage{11}
+  \item {include/pixmap.h}, \hyperpage{11}, \hyperpage{13}
+  \item {include/qtc.h}, \hyperpage{13, 14}
+  \item {include/quadtree.h}, \hyperpage{15}, \hyperpage{18}
+  \item {include/segmentation.h}, \hyperpage{18}, \hyperpage{20}
+
+  \indexspace
+
+  \item {liberer\_pixmap}
+    \subitem {pixmap.h}, \hyperpage{12}
+  \item {liberer\_quadtree}
+    \subitem {quadtree.h}, \hyperpage{17}
+
+  \indexspace
+
+  \item {m}
+    \subitem {QuadNode}, \hyperpage{7}
+
+  \indexspace
+
+  \item {nodes}
+    \subitem {QuadTree}, \hyperpage{8}
+
+  \indexspace
+
+  \item {pgm\_vers\_pixmap}
+    \subitem {pixmap.h}, \hyperpage{12}
+  \item {pixels}
+    \subitem {Pixmap}, \hyperpage{6}
+  \item {Pixmap}, \hyperpage{5}
+    \subitem {height}, \hyperpage{6}
+    \subitem {pixels}, \hyperpage{6}
+    \subitem {width}, \hyperpage{6}
+  \item {pixmap.h}
+    \subitem {liberer\_pixmap}, \hyperpage{12}
+    \subitem {pgm\_vers\_pixmap}, \hyperpage{12}
+    \subitem {pixmap\_vers\_pgm}, \hyperpage{12}
+  \item {pixmap\_vers\_pgm}
+    \subitem {pixmap.h}, \hyperpage{12}
+  \item {pullbits}
+    \subitem {bitstream.h}, \hyperpage{10}
+  \item {pushbits}
+    \subitem {bitstream.h}, \hyperpage{10}
+
+  \indexspace
+
+  \item {qtc.h}
+    \subitem {coder\_fichier}, \hyperpage{14}
+    \subitem {decoder\_fichier}, \hyperpage{14}
+  \item {QuadNode}, \hyperpage{6}
+    \subitem {epsilon}, \hyperpage{7}
+    \subitem {m}, \hyperpage{7}
+    \subitem {u}, \hyperpage{7}
+    \subitem {v}, \hyperpage{7}
+  \item {QuadTree}, \hyperpage{7}
+    \subitem {depth}, \hyperpage{8}
+    \subitem {nodes}, \hyperpage{8}
+    \subitem {total\_nodes}, \hyperpage{8}
+  \item {quadtree.h}
+    \subitem {appliquer\_filtrage}, \hyperpage{16}
+    \subitem {construire\_quadtree}, \hyperpage{16}
+    \subitem {creer\_quadtree}, \hyperpage{17}
+    \subitem {liberer\_quadtree}, \hyperpage{17}
+    \subitem {quadtree\_vers\_pixmap}, \hyperpage{17}
+  \item {quadtree\_vers\_pixmap}
+    \subitem {quadtree.h}, \hyperpage{17}
+
+  \indexspace
+
+  \item {segmentation.h}
+    \subitem {generer\_grille\_segmentation}, \hyperpage{19}
+
+  \indexspace
+
+  \item {total\_nodes}
+    \subitem {QuadTree}, \hyperpage{8}
+
+  \indexspace
+
+  \item {u}
+    \subitem {QuadNode}, \hyperpage{7}
+
+  \indexspace
+
+  \item {v}
+    \subitem {QuadNode}, \hyperpage{7}
+
+  \indexspace
+
+  \item {width}
+    \subitem {Pixmap}, \hyperpage{6}
+
+\end{theindex}

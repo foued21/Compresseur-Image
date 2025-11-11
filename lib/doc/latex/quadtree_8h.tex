@@ -1,0 +1,153 @@
+\doxysection{include/quadtree.h File Reference}
+\hypertarget{quadtree_8h}{}\label{quadtree_8h}\index{include/quadtree.h@{include/quadtree.h}}
+
+
+Déclarations pour la gestion des Quad\+Trees.  
+
+
+{\ttfamily \#include "{}pixmap.\+h"{}}\newline
+Include dependency graph for quadtree.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{quadtree_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{quadtree_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structQuadNode}{Quad\+Node}}
+\begin{DoxyCompactList}\small\item\em Structure représentant un nœud dans le \doxylink{structQuadTree}{Quad\+Tree}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structQuadTree}{Quad\+Tree}}
+\begin{DoxyCompactList}\small\item\em Structure représentant un \doxylink{structQuadTree}{Quad\+Tree}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{quadtree_8h_ae1ceb96647326ccb27cc06073ecafb50}{creer\+\_\+quadtree}} (int depth)
+\begin{DoxyCompactList}\small\item\em Crée un \doxylink{structQuadTree}{Quad\+Tree} vide avec une profondeur donnée. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{quadtree_8h_a6ca4e4a1ff3d14889ebbd82a05088af9}{construire\+\_\+quadtree}} (\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}tree, \mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*}pixmap, int x, int y, int taille, int index)
+\begin{DoxyCompactList}\small\item\em Construit un \doxylink{structQuadTree}{Quad\+Tree} à partir d\textquotesingle{}une \doxylink{structPixmap}{Pixmap}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{quadtree_8h_a6a302852897aa6e92c25efb4a50c1212}{quadtree\+\_\+vers\+\_\+pixmap}} (\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}tree)
+\begin{DoxyCompactList}\small\item\em Reconstruit une \doxylink{structPixmap}{Pixmap} à partir d\textquotesingle{}un \doxylink{structQuadTree}{Quad\+Tree}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{quadtree_8h_a5af84d7d1e39b7a12f7172fac9d20d93}{appliquer\+\_\+filtrage}} (\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}tree, double alpha)
+\begin{DoxyCompactList}\small\item\em Applique un filtrage sur un \doxylink{structQuadTree}{Quad\+Tree}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{quadtree_8h_a113d3b48c37bd4c74f0b838d5e834eea}{liberer\+\_\+quadtree}} (\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}tree)
+\begin{DoxyCompactList}\small\item\em Libère la mémoire allouée pour un \doxylink{structQuadTree}{Quad\+Tree}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Déclarations pour la gestion des Quad\+Trees. 
+
+Ce fichier contient les définitions des structures et des fonctions permettant de manipuler des Quad\+Trees, une structure utilisée pour représenter des images de manière hiérarchique. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{quadtree_8h_a5af84d7d1e39b7a12f7172fac9d20d93}\label{quadtree_8h_a5af84d7d1e39b7a12f7172fac9d20d93} 
+\index{quadtree.h@{quadtree.h}!appliquer\_filtrage@{appliquer\_filtrage}}
+\index{appliquer\_filtrage@{appliquer\_filtrage}!quadtree.h@{quadtree.h}}
+\doxysubsubsection{\texorpdfstring{appliquer\_filtrage()}{appliquer\_filtrage()}}
+{\footnotesize\ttfamily void appliquer\+\_\+filtrage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}}]{tree,  }\item[{double}]{alpha }\end{DoxyParamCaption})}
+
+
+
+Applique un filtrage sur un \doxylink{structQuadTree}{Quad\+Tree}. 
+
+Simplifie le \doxylink{structQuadTree}{Quad\+Tree} en fonction de la variance des blocs pour réduire la taille ou améliorer la compression.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & Le \doxylink{structQuadTree}{Quad\+Tree} à filtrer. \\
+\hline
+{\em alpha} & Facteur de pondération pour ajuster la tolérance à la variance. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{quadtree_8h_a6ca4e4a1ff3d14889ebbd82a05088af9}\label{quadtree_8h_a6ca4e4a1ff3d14889ebbd82a05088af9} 
+\index{quadtree.h@{quadtree.h}!construire\_quadtree@{construire\_quadtree}}
+\index{construire\_quadtree@{construire\_quadtree}!quadtree.h@{quadtree.h}}
+\doxysubsubsection{\texorpdfstring{construire\_quadtree()}{construire\_quadtree()}}
+{\footnotesize\ttfamily void construire\+\_\+quadtree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}}]{tree,  }\item[{\mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*}}]{pixmap,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{taille,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Construit un \doxylink{structQuadTree}{Quad\+Tree} à partir d\textquotesingle{}une \doxylink{structPixmap}{Pixmap}. 
+
+Cette fonction divise une image \doxylink{structPixmap}{Pixmap} en blocs pour remplir les données d\textquotesingle{}un \doxylink{structQuadTree}{Quad\+Tree}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & Le \doxylink{structQuadTree}{Quad\+Tree} à construire. \\
+\hline
+{\em pixmap} & La \doxylink{structPixmap}{Pixmap} source. \\
+\hline
+{\em x} & Coordonnée x du coin supérieur gauche du bloc. \\
+\hline
+{\em y} & Coordonnée y du coin supérieur gauche du bloc. \\
+\hline
+{\em taille} & Taille du bloc actuel (côté du carré). \\
+\hline
+{\em index} & L\textquotesingle{}index du nœud actuel dans le \doxylink{structQuadTree}{Quad\+Tree}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{quadtree_8h_ae1ceb96647326ccb27cc06073ecafb50}\label{quadtree_8h_ae1ceb96647326ccb27cc06073ecafb50} 
+\index{quadtree.h@{quadtree.h}!creer\_quadtree@{creer\_quadtree}}
+\index{creer\_quadtree@{creer\_quadtree}!quadtree.h@{quadtree.h}}
+\doxysubsubsection{\texorpdfstring{creer\_quadtree()}{creer\_quadtree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*} creer\+\_\+quadtree (\begin{DoxyParamCaption}\item[{int}]{depth }\end{DoxyParamCaption})}
+
+
+
+Crée un \doxylink{structQuadTree}{Quad\+Tree} vide avec une profondeur donnée. 
+
+Alloue la mémoire pour un \doxylink{structQuadTree}{Quad\+Tree} et initialise ses nœuds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em depth} & La profondeur maximale du \doxylink{structQuadTree}{Quad\+Tree}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers le \doxylink{structQuadTree}{Quad\+Tree} créé ou NULL en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
+\Hypertarget{quadtree_8h_a113d3b48c37bd4c74f0b838d5e834eea}\label{quadtree_8h_a113d3b48c37bd4c74f0b838d5e834eea} 
+\index{quadtree.h@{quadtree.h}!liberer\_quadtree@{liberer\_quadtree}}
+\index{liberer\_quadtree@{liberer\_quadtree}!quadtree.h@{quadtree.h}}
+\doxysubsubsection{\texorpdfstring{liberer\_quadtree()}{liberer\_quadtree()}}
+{\footnotesize\ttfamily void liberer\+\_\+quadtree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}}]{tree }\end{DoxyParamCaption})}
+
+
+
+Libère la mémoire allouée pour un \doxylink{structQuadTree}{Quad\+Tree}. 
+
+Cette fonction libère la mémoire utilisée par les nœuds et la structure du \doxylink{structQuadTree}{Quad\+Tree}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & Le \doxylink{structQuadTree}{Quad\+Tree} à libérer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{quadtree_8h_a6a302852897aa6e92c25efb4a50c1212}\label{quadtree_8h_a6a302852897aa6e92c25efb4a50c1212} 
+\index{quadtree.h@{quadtree.h}!quadtree\_vers\_pixmap@{quadtree\_vers\_pixmap}}
+\index{quadtree\_vers\_pixmap@{quadtree\_vers\_pixmap}!quadtree.h@{quadtree.h}}
+\doxysubsubsection{\texorpdfstring{quadtree\_vers\_pixmap()}{quadtree\_vers\_pixmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*} quadtree\+\_\+vers\+\_\+pixmap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}}]{tree }\end{DoxyParamCaption})}
+
+
+
+Reconstruit une \doxylink{structPixmap}{Pixmap} à partir d\textquotesingle{}un \doxylink{structQuadTree}{Quad\+Tree}. 
+
+Cette fonction recrée une image \doxylink{structPixmap}{Pixmap} en niveaux de gris en utilisant les données d\textquotesingle{}un \doxylink{structQuadTree}{Quad\+Tree}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & Le \doxylink{structQuadTree}{Quad\+Tree} contenant les données de l\textquotesingle{}image. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers la \doxylink{structPixmap}{Pixmap} recréée ou NULL en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}

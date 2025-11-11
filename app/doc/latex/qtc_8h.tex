@@ -1,0 +1,75 @@
+\doxysection{include/qtc.h File Reference}
+\hypertarget{qtc_8h}{}\label{qtc_8h}\index{include/qtc.h@{include/qtc.h}}
+
+
+Interface pour le codage des fichiers PGM en QTC et le décodage des fichiers QTC en PGM.  
+
+
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{qtc_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{qtc_8h_a31134b1fb4102df92ed80c0e4737e44c}{coder\+\_\+fichier}} (const char \texorpdfstring{$\ast$}{*}input\+\_\+file, const char \texorpdfstring{$\ast$}{*}output\+\_\+file, double alpha, int generer\+\_\+grille, int verbose)
+\item 
+int \mbox{\hyperlink{qtc_8h_a305204fe72cd96d547dd0f79b7c703bd}{decoder\+\_\+fichier}} (const char \texorpdfstring{$\ast$}{*}input\+\_\+file, const char \texorpdfstring{$\ast$}{*}output\+\_\+file, int generer\+\_\+grille, int verbose)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface pour le codage des fichiers PGM en QTC et le décodage des fichiers QTC en PGM. 
+
+Ce fichier contient les déclarations des fonctions principales pour encoder des images PGM en fichiers QTC et pour décoder des fichiers QTC en images PGM. Il gère également des options comme le mode verbeux et la génération de grilles de segmentation. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{qtc_8h_a31134b1fb4102df92ed80c0e4737e44c}\label{qtc_8h_a31134b1fb4102df92ed80c0e4737e44c} 
+\index{qtc.h@{qtc.h}!coder\_fichier@{coder\_fichier}}
+\index{coder\_fichier@{coder\_fichier}!qtc.h@{qtc.h}}
+\doxysubsubsection{\texorpdfstring{coder\_fichier()}{coder\_fichier()}}
+{\footnotesize\ttfamily int coder\+\_\+fichier (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{input\+\_\+file,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{output\+\_\+file,  }\item[{double}]{alpha,  }\item[{int}]{generer\+\_\+grille,  }\item[{int}]{verbose }\end{DoxyParamCaption})}
+
+Fonction principale pour encoder un fichier PGM en QTC.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+file} & Chemin du fichier d\textquotesingle{}entrée (PGM). \\
+\hline
+{\em output\+\_\+file} & Chemin du fichier de sortie (QTC). \\
+\hline
+{\em alpha} & Paramètre pour l\textquotesingle{}encodage avec perte. Si \texorpdfstring{$<$}{<}= 0, aucun filtrage. \\
+\hline
+{\em generer\+\_\+grille} & Générer une grille de segmentation (1 \+: oui, 0 \+: non). \\
+\hline
+{\em verbose} & Activer le mode verbeux (1 \+: oui, 0 \+: non). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 en cas de succès, 1 sinon. 
+\end{DoxyReturn}
+\Hypertarget{qtc_8h_a305204fe72cd96d547dd0f79b7c703bd}\label{qtc_8h_a305204fe72cd96d547dd0f79b7c703bd} 
+\index{qtc.h@{qtc.h}!decoder\_fichier@{decoder\_fichier}}
+\index{decoder\_fichier@{decoder\_fichier}!qtc.h@{qtc.h}}
+\doxysubsubsection{\texorpdfstring{decoder\_fichier()}{decoder\_fichier()}}
+{\footnotesize\ttfamily int decoder\+\_\+fichier (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{input\+\_\+file,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{output\+\_\+file,  }\item[{int}]{generer\+\_\+grille,  }\item[{int}]{verbose }\end{DoxyParamCaption})}
+
+Fonction principale pour décoder un fichier QTC en PGM.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+file} & Chemin du fichier d\textquotesingle{}entrée (QTC). \\
+\hline
+{\em output\+\_\+file} & Chemin du fichier de sortie (PGM). \\
+\hline
+{\em generer\+\_\+grille} & Générer une grille de segmentation (1 \+: oui, 0 \+: non). \\
+\hline
+{\em verbose} & Activer le mode verbeux (1 \+: oui, 0 \+: non). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 en cas de succès, 1 sinon. 
+\end{DoxyReturn}

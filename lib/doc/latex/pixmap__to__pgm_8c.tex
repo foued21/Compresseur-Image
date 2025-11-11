@@ -1,0 +1,49 @@
+\doxysection{src/pixmap\+\_\+to\+\_\+pgm.c File Reference}
+\hypertarget{pixmap__to__pgm_8c}{}\label{pixmap__to__pgm_8c}\index{src/pixmap\_to\_pgm.c@{src/pixmap\_to\_pgm.c}}
+
+
+Conversion de \doxylink{structPixmap}{Pixmap} en fichier PGM.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}../include/pixmap.\+h"{}}\newline
+Include dependency graph for pixmap\+\_\+to\+\_\+pgm.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{pixmap__to__pgm_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pixmap__to__pgm_8c_a351d61360bbd68e57ff25f938c44ea76}{pixmap\+\_\+vers\+\_\+pgm}} (const char \texorpdfstring{$\ast$}{*}fichier, const \mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*}pixmap)
+\begin{DoxyCompactList}\small\item\em Sauvegarde une \doxylink{structPixmap}{Pixmap} dans un fichier PGM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Conversion de \doxylink{structPixmap}{Pixmap} en fichier PGM. 
+
+Fournit les fonctions pour sauvegarder une structure \doxylink{structPixmap}{Pixmap} au format PGM. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pixmap__to__pgm_8c_a351d61360bbd68e57ff25f938c44ea76}\label{pixmap__to__pgm_8c_a351d61360bbd68e57ff25f938c44ea76} 
+\index{pixmap\_to\_pgm.c@{pixmap\_to\_pgm.c}!pixmap\_vers\_pgm@{pixmap\_vers\_pgm}}
+\index{pixmap\_vers\_pgm@{pixmap\_vers\_pgm}!pixmap\_to\_pgm.c@{pixmap\_to\_pgm.c}}
+\doxysubsubsection{\texorpdfstring{pixmap\_vers\_pgm()}{pixmap\_vers\_pgm()}}
+{\footnotesize\ttfamily void pixmap\+\_\+vers\+\_\+pgm (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{fichier,  }\item[{const \mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*}}]{pixmap }\end{DoxyParamCaption})}
+
+
+
+Sauvegarde une \doxylink{structPixmap}{Pixmap} dans un fichier PGM. 
+
+Cette fonction écrit une image représentée sous forme de structure \doxylink{structPixmap}{Pixmap} dans un fichier au format PGM (P5). Elle inclut un en-\/tête PGM standard ainsi qu\textquotesingle{}un commentaire d\textquotesingle{}identification.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fichier} & Le chemin vers le fichier de sortie. \\
+\hline
+{\em pixmap} & La structure \doxylink{structPixmap}{Pixmap} contenant les données de l\textquotesingle{}image. \\
+\hline
+\end{DoxyParams}

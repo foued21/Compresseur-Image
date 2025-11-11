@@ -1,0 +1,80 @@
+\doxysection{src/quadtree\+\_\+to\+\_\+pixmap.c File Reference}
+\hypertarget{quadtree__to__pixmap_8c}{}\label{quadtree__to__pixmap_8c}\index{src/quadtree\_to\_pixmap.c@{src/quadtree\_to\_pixmap.c}}
+
+
+Reconstruction de \doxylink{structPixmap}{Pixmap} à partir d\textquotesingle{}un \doxylink{structQuadTree}{Quad\+Tree}.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}../include/quadtree.\+h"{}}\newline
+{\ttfamily \#include "{}../include/pixmap.\+h"{}}\newline
+Include dependency graph for quadtree\+\_\+to\+\_\+pixmap.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{quadtree__to__pixmap_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{quadtree__to__pixmap_8c_aec9e22fe6069028684fd5a73189bd30e}{remplir\+\_\+pixmap}} (\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}tree, \mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*}pixmap, int x, int y, int size, int index)
+\begin{DoxyCompactList}\small\item\em Remplit les pixels d\textquotesingle{}une \doxylink{structPixmap}{Pixmap} à partir d\textquotesingle{}un \doxylink{structQuadTree}{Quad\+Tree}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{quadtree__to__pixmap_8c_a6a302852897aa6e92c25efb4a50c1212}{quadtree\+\_\+vers\+\_\+pixmap}} (\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}tree)
+\begin{DoxyCompactList}\small\item\em Convertit un \doxylink{structQuadTree}{Quad\+Tree} en une \doxylink{structPixmap}{Pixmap}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Reconstruction de \doxylink{structPixmap}{Pixmap} à partir d\textquotesingle{}un \doxylink{structQuadTree}{Quad\+Tree}. 
+
+Fournit les outils pour recréer une image \doxylink{structPixmap}{Pixmap} en niveaux de gris depuis un \doxylink{structQuadTree}{Quad\+Tree}. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{quadtree__to__pixmap_8c_a6a302852897aa6e92c25efb4a50c1212}\label{quadtree__to__pixmap_8c_a6a302852897aa6e92c25efb4a50c1212} 
+\index{quadtree\_to\_pixmap.c@{quadtree\_to\_pixmap.c}!quadtree\_vers\_pixmap@{quadtree\_vers\_pixmap}}
+\index{quadtree\_vers\_pixmap@{quadtree\_vers\_pixmap}!quadtree\_to\_pixmap.c@{quadtree\_to\_pixmap.c}}
+\doxysubsubsection{\texorpdfstring{quadtree\_vers\_pixmap()}{quadtree\_vers\_pixmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*} quadtree\+\_\+vers\+\_\+pixmap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}}]{tree }\end{DoxyParamCaption})}
+
+
+
+Convertit un \doxylink{structQuadTree}{Quad\+Tree} en une \doxylink{structPixmap}{Pixmap}. 
+
+Cette fonction reconstruit une image \doxylink{structPixmap}{Pixmap} à partir d\textquotesingle{}un \doxylink{structQuadTree}{Quad\+Tree}, où chaque noeud représente une zone de l\textquotesingle{}image. Les zones uniformes sont remplies directement, tandis que les zones non uniformes sont divisées récursivement.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & Le \doxylink{structQuadTree}{Quad\+Tree} contenant les données de l\textquotesingle{}image. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers une \doxylink{structPixmap}{Pixmap} représentant l\textquotesingle{}image reconstruite, ou NULL en cas d\textquotesingle{}erreur d\textquotesingle{}allocation. 
+\end{DoxyReturn}
+\Hypertarget{quadtree__to__pixmap_8c_aec9e22fe6069028684fd5a73189bd30e}\label{quadtree__to__pixmap_8c_aec9e22fe6069028684fd5a73189bd30e} 
+\index{quadtree\_to\_pixmap.c@{quadtree\_to\_pixmap.c}!remplir\_pixmap@{remplir\_pixmap}}
+\index{remplir\_pixmap@{remplir\_pixmap}!quadtree\_to\_pixmap.c@{quadtree\_to\_pixmap.c}}
+\doxysubsubsection{\texorpdfstring{remplir\_pixmap()}{remplir\_pixmap()}}
+{\footnotesize\ttfamily static void remplir\+\_\+pixmap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}}]{tree,  }\item[{\mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*}}]{pixmap,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{size,  }\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Remplit les pixels d\textquotesingle{}une \doxylink{structPixmap}{Pixmap} à partir d\textquotesingle{}un \doxylink{structQuadTree}{Quad\+Tree}. 
+
+Fonction récursive qui parcourt un \doxylink{structQuadTree}{Quad\+Tree} et remplit la \doxylink{structPixmap}{Pixmap} en fonction des données de chaque nœud. Les noeuds uniformes remplissent directement une zone, tandis que les noeuds non uniformes sont divisés en sous-\/zones.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & Le \doxylink{structQuadTree}{Quad\+Tree} contenant les données. \\
+\hline
+{\em pixmap} & La \doxylink{structPixmap}{Pixmap} à remplir. \\
+\hline
+{\em x} & La coordonnée x du coin supérieur gauche de la zone. \\
+\hline
+{\em y} & La coordonnée y du coin supérieur gauche de la zone. \\
+\hline
+{\em size} & La taille de la zone (côté du carré). \\
+\hline
+{\em index} & L\textquotesingle{}index du nœud actuel dans le \doxylink{structQuadTree}{Quad\+Tree}. \\
+\hline
+\end{DoxyParams}

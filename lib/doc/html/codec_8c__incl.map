@@ -1,0 +1,30 @@
+<map id="src/codec.c" name="src/codec.c">
+<area shape="rect" id="Node000001" title="Implémentation des fonctions pour la compression et la décompression." alt="" coords="625,5,719,31"/>
+<area shape="rect" id="Node000002" href="$bitstream_8h.html" title="Manipulation des flux binaires." alt="" coords="44,79,204,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="625,28,218,81,217,75,624,23"/>
+<area shape="rect" id="Node000005" href="$segmentation_8h.html" title="Génération de grilles de segmentation à partir de QuadTrees." alt="" coords="228,79,415,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="625,32,391,79,390,73,624,26"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="439,79,505,104"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="641,33,519,76,517,71,639,28"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="529,79,612,104"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="657,33,600,73,597,68,654,28"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="637,79,707,104"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="675,31,675,65,669,65,669,31"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="731,79,802,104"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="689,29,742,68,739,72,686,33"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="826,79,894,104"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="703,28,817,71,816,76,701,33"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="919,79,983,104"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="718,28,906,76,905,81,717,33"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="1007,79,1081,104"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="720,25,993,76,992,81,719,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,80,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="113,106,68,145,64,141,109,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="105,152,175,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="129,104,137,138,132,139,124,105"/>
+<area shape="rect" id="Node000006" href="$quadtree_8h.html" title="Déclarations pour la gestion des QuadTrees." alt="" coords="229,152,384,177"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="322,105,314,139,309,138,316,104"/>
+<area shape="rect" id="Node000007" href="$pixmap_8h.html" title="Manipulation d&#39;images en niveaux de gris (Pixmap)." alt="" coords="323,225,405,251"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="347,102,375,122,388,135,398,151,402,168,400,185,385,215,380,213,395,183,397,168,394,153,384,138,371,126,344,106"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="318,176,348,213,344,216,314,179"/>
+</map>

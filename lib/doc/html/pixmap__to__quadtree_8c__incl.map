@@ -1,0 +1,12 @@
+<map id="src/pixmap_to_quadtree.c" name="src/pixmap_to_quadtree.c">
+<area shape="rect" id="Node000001" title="Conversion de Pixmap en QuadTree." alt="" coords="107,5,297,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,76,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,33,81,75,78,71,175,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="100,79,168,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,33,157,70,153,67,189,29"/>
+<area shape="rect" id="Node000004" href="$quadtree_8h_source.html" title=" " alt="" coords="193,79,347,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="215,29,251,67,247,70,211,33"/>
+<area shape="rect" id="Node000005" href="$pixmap_8h_source.html" title=" " alt="" coords="286,152,369,177"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="285,28,327,46,346,60,362,77,367,94,365,111,349,142,344,140,360,109,362,94,357,80,342,64,325,51,283,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="282,103,311,139,307,143,277,106"/>
+</map>

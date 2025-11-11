@@ -1,0 +1,367 @@
+\doxysection{src/codec.c File Reference}
+\hypertarget{codec_8c}{}\label{codec_8c}\index{src/codec.c@{src/codec.c}}
+
+
+Implémentation des fonctions pour la compression et la décompression.  
+
+
+{\ttfamily \#include "{}../include/bitstream.\+h"{}}\newline
+{\ttfamily \#include "{}../include/segmentation.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$libgen.\+h$>$}\newline
+Include dependency graph for codec.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{codec_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{codec_8c_ae5cf236c97b231fc98aca7d1cb6fdde8}{encoder\+\_\+entete}} (\mbox{\hyperlink{structBitStream}{Bit\+Stream}} \texorpdfstring{$\ast$}{*}stream)
+\begin{DoxyCompactList}\small\item\em Encode l\textquotesingle{}entête du fichier compressé. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{codec_8c_ae76457e52c86faef93310cc9ee9c3087}{encoder\+\_\+taux\+\_\+compression}} (\mbox{\hyperlink{structBitStream}{Bit\+Stream}} \texorpdfstring{$\ast$}{*}stream, double compression\+\_\+rate)
+\begin{DoxyCompactList}\small\item\em Encode le taux de compression dans le fichier. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{codec_8c_a4eb7a15332536b150226feed254c0687}{encoder\+\_\+profondeur}} (\mbox{\hyperlink{structBitStream}{Bit\+Stream}} \texorpdfstring{$\ast$}{*}stream, \mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}tree)
+\begin{DoxyCompactList}\small\item\em Encode la profondeur du \doxylink{structQuadTree}{Quad\+Tree}. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{codec_8c_aa801f54f2ebc2a26f1eaa639ed9260f9}{encoder\+\_\+quadtree}} (\mbox{\hyperlink{structBitStream}{Bit\+Stream}} \texorpdfstring{$\ast$}{*}stream, \mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}tree, size\+\_\+t \texorpdfstring{$\ast$}{*}encoded\+\_\+bits)
+\begin{DoxyCompactList}\small\item\em Encode les données du \doxylink{structQuadTree}{Quad\+Tree} dans le fichier. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{codec_8c_a598d3e56a73cc21db35b3c57a7602788}{ecrire\+\_\+quadtree}} (\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}tree, const char \texorpdfstring{$\ast$}{*}fichier)
+\begin{DoxyCompactList}\small\item\em Écrit un \doxylink{structQuadTree}{Quad\+Tree} compressé dans un fichier. \end{DoxyCompactList}\item 
+static unsigned char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{codec_8c_a09df1a48eefee565c3d4f9ea6fb57e58}{lire\+\_\+donnees}} (FILE \texorpdfstring{$\ast$}{*}fp, size\+\_\+t \texorpdfstring{$\ast$}{*}taille\+\_\+lue)
+\begin{DoxyCompactList}\small\item\em Lit les données d\textquotesingle{}un fichier. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{codec_8c_a3d8dce2fdcfb8fe6802630e862425f5b}{lire\+\_\+magic\+\_\+number}} (FILE \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em verifie le magic number du fichier. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{codec_8c_a18dabeefb6b5e8d5765133102d4829f8}{decoder\+\_\+quadtree}} (\mbox{\hyperlink{structBitStream}{Bit\+Stream}} \texorpdfstring{$\ast$}{*}stream, \mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}tree)
+\begin{DoxyCompactList}\small\item\em Décode les données d\textquotesingle{}un \doxylink{structQuadTree}{Quad\+Tree} depuis un flux binaire. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{codec_8c_a86492db2009583d565e307b279d402bd}{ignorer\+\_\+commentaires}} (FILE \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em Ignore les commentaires dans un fichier binaire. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{codec_8c_af08a6044c6dae21c508ad5f121ba1a58}{charger\+\_\+quadtree}} (const char \texorpdfstring{$\ast$}{*}fichier)
+\begin{DoxyCompactList}\small\item\em Charge un \doxylink{structQuadTree}{Quad\+Tree} depuis un fichier compressé. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{codec_8c_a11fd8ce352588a2b2863970a986c2194}{est\+\_\+4\+\_\+fils}} (int node\+Index)
+\begin{DoxyCompactList}\small\item\em verifie si un noeud est un quatrième fils dans le \doxylink{structQuadTree}{Quad\+Tree}. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{codec_8c_aea6a9405af7925dc67f4813069c7255d}{est\+\_\+feuille}} (\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}tree, int node\+Index)
+\begin{DoxyCompactList}\small\item\em verifie si un noeud est une feuille dans le \doxylink{structQuadTree}{Quad\+Tree}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{codec_8c_a31134b1fb4102df92ed80c0e4737e44c}{coder\+\_\+fichier}} (const char \texorpdfstring{$\ast$}{*}input\+\_\+file, const char \texorpdfstring{$\ast$}{*}output\+\_\+file, double alpha, int generer\+\_\+grille, int verbose)
+\begin{DoxyCompactList}\small\item\em Fonction pour encoder un fichier en \doxylink{structQuadTree}{Quad\+Tree} compressé. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{codec_8c_a305204fe72cd96d547dd0f79b7c703bd}{decoder\+\_\+fichier}} (const char \texorpdfstring{$\ast$}{*}input\+\_\+file, const char \texorpdfstring{$\ast$}{*}output\+\_\+file, int generer\+\_\+grille, int verbose)
+\begin{DoxyCompactList}\small\item\em Décode un fichier compressé en \doxylink{structQuadTree}{Quad\+Tree} pour restaurer une image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implémentation des fonctions pour la compression et la décompression. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{codec_8c_af08a6044c6dae21c508ad5f121ba1a58}\label{codec_8c_af08a6044c6dae21c508ad5f121ba1a58} 
+\index{codec.c@{codec.c}!charger\_quadtree@{charger\_quadtree}}
+\index{charger\_quadtree@{charger\_quadtree}!codec.c@{codec.c}}
+\doxysubsubsection{\texorpdfstring{charger\_quadtree()}{charger\_quadtree()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*} charger\+\_\+quadtree (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{fichier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Charge un \doxylink{structQuadTree}{Quad\+Tree} depuis un fichier compressé. 
+
+Lit les données compressées depuis un fichier et reconstruit un \doxylink{structQuadTree}{Quad\+Tree}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fichier} & Le chemin vers le fichier compressé. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers le \doxylink{structQuadTree}{Quad\+Tree} reconstruit ou NULL en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
+\Hypertarget{codec_8c_a31134b1fb4102df92ed80c0e4737e44c}\label{codec_8c_a31134b1fb4102df92ed80c0e4737e44c} 
+\index{codec.c@{codec.c}!coder\_fichier@{coder\_fichier}}
+\index{coder\_fichier@{coder\_fichier}!codec.c@{codec.c}}
+\doxysubsubsection{\texorpdfstring{coder\_fichier()}{coder\_fichier()}}
+{\footnotesize\ttfamily int coder\+\_\+fichier (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{input\+\_\+file,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{output\+\_\+file,  }\item[{double}]{alpha,  }\item[{int}]{generer\+\_\+grille,  }\item[{int}]{verbose }\end{DoxyParamCaption})}
+
+
+
+Fonction pour encoder un fichier en \doxylink{structQuadTree}{Quad\+Tree} compressé. 
+
+Cette fonction prend en entrée une image, applique un \doxylink{structQuadTree}{Quad\+Tree} pour la compresser, et écrit les données compressées dans un fichier de sortie.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+file} & Le fichier image d\textquotesingle{}entrée. \\
+\hline
+{\em output\+\_\+file} & Le fichier compressé en sortie. \\
+\hline
+{\em alpha} & Le paramètre de filtrage pour lisser les données. \\
+\hline
+{\em generer\+\_\+grille} & Si activé, génère aussi une grille de segmentation. \\
+\hline
+{\em verbose} & Si activé, affiche des détails pendant l\textquotesingle{}exécution. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si tout se passe bien, sinon 1 en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
+\Hypertarget{codec_8c_a305204fe72cd96d547dd0f79b7c703bd}\label{codec_8c_a305204fe72cd96d547dd0f79b7c703bd} 
+\index{codec.c@{codec.c}!decoder\_fichier@{decoder\_fichier}}
+\index{decoder\_fichier@{decoder\_fichier}!codec.c@{codec.c}}
+\doxysubsubsection{\texorpdfstring{decoder\_fichier()}{decoder\_fichier()}}
+{\footnotesize\ttfamily int decoder\+\_\+fichier (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{input\+\_\+file,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{output\+\_\+file,  }\item[{int}]{generer\+\_\+grille,  }\item[{int}]{verbose }\end{DoxyParamCaption})}
+
+
+
+Décode un fichier compressé en \doxylink{structQuadTree}{Quad\+Tree} pour restaurer une image. 
+
+Reconstruit une image à partir d\textquotesingle{}un fichier compressé.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+file} & Le fichier compressé à décoder. \\
+\hline
+{\em output\+\_\+file} & Le fichier de sortie pour l\textquotesingle{}image reconstruite. \\
+\hline
+{\em generer\+\_\+grille} & Indique si une grille doit être générée. \\
+\hline
+{\em verbose} & Active ou désactive les messages détaillés. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si le processus réussit, 1 en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
+\Hypertarget{codec_8c_a18dabeefb6b5e8d5765133102d4829f8}\label{codec_8c_a18dabeefb6b5e8d5765133102d4829f8} 
+\index{codec.c@{codec.c}!decoder\_quadtree@{decoder\_quadtree}}
+\index{decoder\_quadtree@{decoder\_quadtree}!codec.c@{codec.c}}
+\doxysubsubsection{\texorpdfstring{decoder\_quadtree()}{decoder\_quadtree()}}
+{\footnotesize\ttfamily static void decoder\+\_\+quadtree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBitStream}{Bit\+Stream}} \texorpdfstring{$\ast$}{*}}]{stream,  }\item[{\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}}]{tree }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Décode les données d\textquotesingle{}un \doxylink{structQuadTree}{Quad\+Tree} depuis un flux binaire. 
+
+Cette fonction reconstruit un \doxylink{structQuadTree}{Quad\+Tree} compressé à partir des données binaires.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Le flux binaire contenant les données. \\
+\hline
+{\em tree} & Le \doxylink{structQuadTree}{Quad\+Tree} à remplir. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{codec_8c_a598d3e56a73cc21db35b3c57a7602788}\label{codec_8c_a598d3e56a73cc21db35b3c57a7602788} 
+\index{codec.c@{codec.c}!ecrire\_quadtree@{ecrire\_quadtree}}
+\index{ecrire\_quadtree@{ecrire\_quadtree}!codec.c@{codec.c}}
+\doxysubsubsection{\texorpdfstring{ecrire\_quadtree()}{ecrire\_quadtree()}}
+{\footnotesize\ttfamily static void ecrire\+\_\+quadtree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}}]{tree,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{fichier }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Écrit un \doxylink{structQuadTree}{Quad\+Tree} compressé dans un fichier. 
+
+Cette fonction gère l\textquotesingle{}écriture de toutes les parties nécessaires à la compression, y compris l\textquotesingle{}entête, la profondeur, et les données du \doxylink{structQuadTree}{Quad\+Tree}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & Le \doxylink{structQuadTree}{Quad\+Tree} contenant les données à écrire. \\
+\hline
+{\em fichier} & Le chemin vers le fichier de sortie. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{codec_8c_ae5cf236c97b231fc98aca7d1cb6fdde8}\label{codec_8c_ae5cf236c97b231fc98aca7d1cb6fdde8} 
+\index{codec.c@{codec.c}!encoder\_entete@{encoder\_entete}}
+\index{encoder\_entete@{encoder\_entete}!codec.c@{codec.c}}
+\doxysubsubsection{\texorpdfstring{encoder\_entete()}{encoder\_entete()}}
+{\footnotesize\ttfamily static void encoder\+\_\+entete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBitStream}{Bit\+Stream}} \texorpdfstring{$\ast$}{*}}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Encode l\textquotesingle{}entête du fichier compressé. 
+
+Cette fonction ajoute des informations comme l\textquotesingle{}identification du fichier, la date et l\textquotesingle{}heure actuelles dans le flux binaire.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Le flux binaire où écrire les données. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{codec_8c_a4eb7a15332536b150226feed254c0687}\label{codec_8c_a4eb7a15332536b150226feed254c0687} 
+\index{codec.c@{codec.c}!encoder\_profondeur@{encoder\_profondeur}}
+\index{encoder\_profondeur@{encoder\_profondeur}!codec.c@{codec.c}}
+\doxysubsubsection{\texorpdfstring{encoder\_profondeur()}{encoder\_profondeur()}}
+{\footnotesize\ttfamily static void encoder\+\_\+profondeur (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBitStream}{Bit\+Stream}} \texorpdfstring{$\ast$}{*}}]{stream,  }\item[{\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}}]{tree }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Encode la profondeur du \doxylink{structQuadTree}{Quad\+Tree}. 
+
+La profondeur est utilisée pour définir la taille de l\textquotesingle{}image compressée.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Le flux binaire où écrire les données. \\
+\hline
+{\em tree} & Le \doxylink{structQuadTree}{Quad\+Tree} contenant les données de l\textquotesingle{}image. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{codec_8c_aa801f54f2ebc2a26f1eaa639ed9260f9}\label{codec_8c_aa801f54f2ebc2a26f1eaa639ed9260f9} 
+\index{codec.c@{codec.c}!encoder\_quadtree@{encoder\_quadtree}}
+\index{encoder\_quadtree@{encoder\_quadtree}!codec.c@{codec.c}}
+\doxysubsubsection{\texorpdfstring{encoder\_quadtree()}{encoder\_quadtree()}}
+{\footnotesize\ttfamily static void encoder\+\_\+quadtree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBitStream}{Bit\+Stream}} \texorpdfstring{$\ast$}{*}}]{stream,  }\item[{\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}}]{tree,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{encoded\+\_\+bits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Encode les données du \doxylink{structQuadTree}{Quad\+Tree} dans le fichier. 
+
+Traverse le \doxylink{structQuadTree}{Quad\+Tree} et écrit les données dans un format compressé.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Le flux binaire où écrire les données. \\
+\hline
+{\em tree} & Le \doxylink{structQuadTree}{Quad\+Tree} contenant les données. \\
+\hline
+{\em encoded\+\_\+bits} & Un pointeur pour compter le nombre de bits encodés. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{codec_8c_ae76457e52c86faef93310cc9ee9c3087}\label{codec_8c_ae76457e52c86faef93310cc9ee9c3087} 
+\index{codec.c@{codec.c}!encoder\_taux\_compression@{encoder\_taux\_compression}}
+\index{encoder\_taux\_compression@{encoder\_taux\_compression}!codec.c@{codec.c}}
+\doxysubsubsection{\texorpdfstring{encoder\_taux\_compression()}{encoder\_taux\_compression()}}
+{\footnotesize\ttfamily static void encoder\+\_\+taux\+\_\+compression (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBitStream}{Bit\+Stream}} \texorpdfstring{$\ast$}{*}}]{stream,  }\item[{double}]{compression\+\_\+rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Encode le taux de compression dans le fichier. 
+
+Ajoute un commentaire contenant le taux de compression dans le fichier compressé.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Le flux binaire où écrire les données. \\
+\hline
+{\em compression\+\_\+rate} & Le taux de compression calculé. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{codec_8c_a11fd8ce352588a2b2863970a986c2194}\label{codec_8c_a11fd8ce352588a2b2863970a986c2194} 
+\index{codec.c@{codec.c}!est\_4\_fils@{est\_4\_fils}}
+\index{est\_4\_fils@{est\_4\_fils}!codec.c@{codec.c}}
+\doxysubsubsection{\texorpdfstring{est\_4\_fils()}{est\_4\_fils()}}
+{\footnotesize\ttfamily static bool est\+\_\+4\+\_\+fils (\begin{DoxyParamCaption}\item[{int}]{node\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+verifie si un noeud est un quatrième fils dans le \doxylink{structQuadTree}{Quad\+Tree}. 
+
+Le quatrième fils correspond au dernier noeud d\textquotesingle{}un groupe de quatre enfants.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+Index} & L\textquotesingle{}index du nœud à vérifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si c\textquotesingle{}est un quatrième fils, false sinon. 
+\end{DoxyReturn}
+\Hypertarget{codec_8c_aea6a9405af7925dc67f4813069c7255d}\label{codec_8c_aea6a9405af7925dc67f4813069c7255d} 
+\index{codec.c@{codec.c}!est\_feuille@{est\_feuille}}
+\index{est\_feuille@{est\_feuille}!codec.c@{codec.c}}
+\doxysubsubsection{\texorpdfstring{est\_feuille()}{est\_feuille()}}
+{\footnotesize\ttfamily static bool est\+\_\+feuille (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}}]{tree,  }\item[{int}]{node\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+verifie si un noeud est une feuille dans le \doxylink{structQuadTree}{Quad\+Tree}. 
+
+Une feuille n\textquotesingle{}a pas d\textquotesingle{}enfants dans le \doxylink{structQuadTree}{Quad\+Tree}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & Le \doxylink{structQuadTree}{Quad\+Tree} contenant le nœud. \\
+\hline
+{\em node\+Index} & L\textquotesingle{}index du nœud à vérifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si le nœud est une feuille, false sinon. 
+\end{DoxyReturn}
+\Hypertarget{codec_8c_a86492db2009583d565e307b279d402bd}\label{codec_8c_a86492db2009583d565e307b279d402bd} 
+\index{codec.c@{codec.c}!ignorer\_commentaires@{ignorer\_commentaires}}
+\index{ignorer\_commentaires@{ignorer\_commentaires}!codec.c@{codec.c}}
+\doxysubsubsection{\texorpdfstring{ignorer\_commentaires()}{ignorer\_commentaires()}}
+{\footnotesize\ttfamily static void ignorer\+\_\+commentaires (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Ignore les commentaires dans un fichier binaire. 
+
+Cette fonction passe les lignes qui commencent par {\ttfamily \#}. Les autres lignes, même vides ou contenant des espaces, ne sont pas ignorées.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fp} & Pointeur vers le fichier ouvert en lecture binaire.\\
+\hline
+\end{DoxyParams}
+static void \doxylink{codec_8c_a86492db2009583d565e307b279d402bd}{ignorer\+\_\+commentaires(\+FILE \texorpdfstring{$\ast$}{*}fp)} \{ int c;
+
+while ((c = fgetc(fp)) != EOF) \{ Si la ligne commence par {\ttfamily \#}, ignorer jusqu\textquotesingle{}à la fin de la ligne if (c == \textquotesingle{}\#\textquotesingle{}) \{ while ((c = fgetc(fp)) != \textquotesingle{}~\newline
+\textquotesingle{} \&\& c != EOF); \} Si le caractère est un saut de ligne, espace ou tabulation, ne pas l\textquotesingle{}ignorer else if (c == \textquotesingle{}~\newline
+\textquotesingle{} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} c == \textquotesingle{} \textquotesingle{} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} c == \textquotesingle{}\textbackslash{}t\textquotesingle{}) \{ continue; // Continuer la lecture \} Sinon, remettre le caractère dans le flux et sortir else \{ ungetc(c, fp); break; \} \} \}
+
+Ignore les lignes de commentaires dans un fichier.
+
+Les lignes qui commencent par {\ttfamily \#} sont sautées. Les autres types de lignes (vides ou avec données) sont respectées.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fp} & Le fichier ouvert en lecture binaire. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{codec_8c_a09df1a48eefee565c3d4f9ea6fb57e58}\label{codec_8c_a09df1a48eefee565c3d4f9ea6fb57e58} 
+\index{codec.c@{codec.c}!lire\_donnees@{lire\_donnees}}
+\index{lire\_donnees@{lire\_donnees}!codec.c@{codec.c}}
+\doxysubsubsection{\texorpdfstring{lire\_donnees()}{lire\_donnees()}}
+{\footnotesize\ttfamily static unsigned char \texorpdfstring{$\ast$}{*} lire\+\_\+donnees (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{fp,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{taille\+\_\+lue }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lit les données d\textquotesingle{}un fichier. 
+
+Cette fonction charge les données binaires d\textquotesingle{}un fichier dans un tampon.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fp} & Le fichier ouvert en lecture binaire. \\
+\hline
+{\em taille\+\_\+lue} & Un pointeur pour stocker la taille des données lues. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers les données lues ou NULL en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
+\Hypertarget{codec_8c_a3d8dce2fdcfb8fe6802630e862425f5b}\label{codec_8c_a3d8dce2fdcfb8fe6802630e862425f5b} 
+\index{codec.c@{codec.c}!lire\_magic\_number@{lire\_magic\_number}}
+\index{lire\_magic\_number@{lire\_magic\_number}!codec.c@{codec.c}}
+\doxysubsubsection{\texorpdfstring{lire\_magic\_number()}{lire\_magic\_number()}}
+{\footnotesize\ttfamily static int lire\+\_\+magic\+\_\+number (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+verifie le magic number du fichier. 
+
+Le magic number identifie le format du fichier compressé.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fp} & Le fichier ouvert en lecture binaire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si le magic number est valide, 0 sinon. 
+\end{DoxyReturn}

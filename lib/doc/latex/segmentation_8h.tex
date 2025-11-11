@@ -1,0 +1,50 @@
+\doxysection{include/segmentation.h File Reference}
+\hypertarget{segmentation_8h}{}\label{segmentation_8h}\index{include/segmentation.h@{include/segmentation.h}}
+
+
+Génération de grilles de segmentation à partir de Quad\+Trees.  
+
+
+{\ttfamily \#include "{}../include/quadtree.\+h"{}}\newline
+{\ttfamily \#include "{}../include/pixmap.\+h"{}}\newline
+Include dependency graph for segmentation.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{segmentation_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{segmentation_8h_a2c9d419971f62a46365a7f06840b4244}{generer\+\_\+grille\+\_\+segmentation}} (const \mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*}pixmap, const \mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}tree, const char \texorpdfstring{$\ast$}{*}output\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Génère une grille de segmentation à partir d\textquotesingle{}un \doxylink{structQuadTree}{Quad\+Tree}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Génération de grilles de segmentation à partir de Quad\+Trees. 
+
+Ce fichier contient la déclaration de la fonction permettant de générer une grille de segmentation à partir d\textquotesingle{}un \doxylink{structQuadTree}{Quad\+Tree}. La grille est sauvegardée en tant qu\textquotesingle{}image au format PGM. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{segmentation_8h_a2c9d419971f62a46365a7f06840b4244}\label{segmentation_8h_a2c9d419971f62a46365a7f06840b4244} 
+\index{segmentation.h@{segmentation.h}!generer\_grille\_segmentation@{generer\_grille\_segmentation}}
+\index{generer\_grille\_segmentation@{generer\_grille\_segmentation}!segmentation.h@{segmentation.h}}
+\doxysubsubsection{\texorpdfstring{generer\_grille\_segmentation()}{generer\_grille\_segmentation()}}
+{\footnotesize\ttfamily void generer\+\_\+grille\+\_\+segmentation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*}}]{pixmap,  }\item[{const \mbox{\hyperlink{structQuadTree}{Quad\+Tree}} \texorpdfstring{$\ast$}{*}}]{tree,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{output\+\_\+file }\end{DoxyParamCaption})}
+
+
+
+Génère une grille de segmentation à partir d\textquotesingle{}un \doxylink{structQuadTree}{Quad\+Tree}. 
+
+Cette fonction parcourt un \doxylink{structQuadTree}{Quad\+Tree} pour dessiner les bordures des blocs uniformes, créant ainsi une grille de segmentation. Le résultat est ensuite sauvegardé dans un fichier PGM.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pixmap} & La \doxylink{structPixmap}{Pixmap} de référence (dimensions de l\textquotesingle{}image). \\
+\hline
+{\em tree} & Le \doxylink{structQuadTree}{Quad\+Tree} source représentant les blocs de l\textquotesingle{}image. \\
+\hline
+{\em output\+\_\+file} & Le nom du fichier PGM où sauvegarder la grille. \\
+\hline
+\end{DoxyParams}

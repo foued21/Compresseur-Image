@@ -1,0 +1,11 @@
+<map id="src/filtrage_qtree.c" name="src/filtrage_qtree.c">
+<area shape="rect" id="Node000001" title="Application de filtres sur des QuadTrees." alt="" coords="60,5,203,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,73,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,33,67,72,63,68,115,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="98,79,165,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="134,31,134,65,129,65,129,31"/>
+<area shape="rect" id="Node000004" href="$quadtree_8h_source.html" title=" " alt="" coords="189,79,343,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="154,28,233,70,231,74,152,33"/>
+<area shape="rect" id="Node000005" href="$pixmap_8h_source.html" title=" " alt="" coords="225,152,307,177"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="269,104,269,138,263,138,263,104"/>
+</map>

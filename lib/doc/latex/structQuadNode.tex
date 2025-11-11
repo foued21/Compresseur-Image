@@ -1,0 +1,65 @@
+\doxysection{Quad\+Node Struct Reference}
+\hypertarget{structQuadNode}{}\label{structQuadNode}\index{QuadNode@{QuadNode}}
+
+
+Structure représentant un nœud dans le \doxylink{structQuadTree}{Quad\+Tree}.  
+
+
+
+
+{\ttfamily \#include $<$quadtree.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \mbox{\hyperlink{structQuadNode_ac299608a9f5237a45c89ec34f234c93a}{m}}
+\item 
+unsigned char \mbox{\hyperlink{structQuadNode_ac5e072bad964b086050d5f8a451b4e3d}{epsilon}}
+\item 
+unsigned char \mbox{\hyperlink{structQuadNode_a6e56172a160b754940d061d628f59644}{u}}
+\item 
+double \mbox{\hyperlink{structQuadNode_ab9dfa2112421859e93e3136970af83bc}{v}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure représentant un nœud dans le \doxylink{structQuadTree}{Quad\+Tree}. 
+
+Chaque nœud contient les informations suivantes \+:
+\begin{DoxyItemize}
+\item {\ttfamily m} \+: La moyenne des niveaux de gris des pixels dans le bloc représenté.
+\item {\ttfamily epsilon} \+: L\textquotesingle{}erreur de quantification.
+\item {\ttfamily u} \+: Indique si le bloc est uniforme (1 \+: uniforme, 0 \+: non uniforme).
+\item {\ttfamily v} \+: La variance des niveaux de gris dans le bloc. 
+\end{DoxyItemize}
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structQuadNode_ac5e072bad964b086050d5f8a451b4e3d}\label{structQuadNode_ac5e072bad964b086050d5f8a451b4e3d} 
+\index{QuadNode@{QuadNode}!epsilon@{epsilon}}
+\index{epsilon@{epsilon}!QuadNode@{QuadNode}}
+\doxysubsubsection{\texorpdfstring{epsilon}{epsilon}}
+{\footnotesize\ttfamily unsigned char Quad\+Node\+::epsilon}
+
+Erreur de quantification. \Hypertarget{structQuadNode_ac299608a9f5237a45c89ec34f234c93a}\label{structQuadNode_ac299608a9f5237a45c89ec34f234c93a} 
+\index{QuadNode@{QuadNode}!m@{m}}
+\index{m@{m}!QuadNode@{QuadNode}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily unsigned char Quad\+Node\+::m}
+
+Moyenne des niveaux de gris dans le nœud. \Hypertarget{structQuadNode_a6e56172a160b754940d061d628f59644}\label{structQuadNode_a6e56172a160b754940d061d628f59644} 
+\index{QuadNode@{QuadNode}!u@{u}}
+\index{u@{u}!QuadNode@{QuadNode}}
+\doxysubsubsection{\texorpdfstring{u}{u}}
+{\footnotesize\ttfamily unsigned char Quad\+Node\+::u}
+
+Uniformité du nœud (1 si uniforme, 0 sinon). \Hypertarget{structQuadNode_ab9dfa2112421859e93e3136970af83bc}\label{structQuadNode_ab9dfa2112421859e93e3136970af83bc} 
+\index{QuadNode@{QuadNode}!v@{v}}
+\index{v@{v}!QuadNode@{QuadNode}}
+\doxysubsubsection{\texorpdfstring{v}{v}}
+{\footnotesize\ttfamily double Quad\+Node\+::v}
+
+Variance des niveaux de gris dans le nœud. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{quadtree_8h}{quadtree.\+h}}\end{DoxyCompactItemize}

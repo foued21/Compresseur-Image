@@ -1,0 +1,89 @@
+\doxysection{src/pgm\+\_\+to\+\_\+pixmap.c File Reference}
+\hypertarget{pgm__to__pixmap_8c}{}\label{pgm__to__pixmap_8c}\index{src/pgm\_to\_pixmap.c@{src/pgm\_to\_pixmap.c}}
+
+
+Conversion d\textquotesingle{}images PGM en structure \doxylink{structPixmap}{Pixmap}.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include "{}../include/pixmap.\+h"{}}\newline
+Include dependency graph for pgm\+\_\+to\+\_\+pixmap.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pgm__to__pixmap_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{pgm__to__pixmap_8c_adb3175085d5edd7d58b3ec46ae435904}{ignorer\+\_\+commentaires\+\_\+et\+\_\+espaces}} (FILE \texorpdfstring{$\ast$}{*}fp)
+\begin{DoxyCompactList}\small\item\em Ignore les commentaires et les espaces dans un fichier. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{pgm__to__pixmap_8c_a07875707d82031882b8a8a846bc1de9c}{pgm\+\_\+vers\+\_\+pixmap}} (const char \texorpdfstring{$\ast$}{*}fichier)
+\begin{DoxyCompactList}\small\item\em Convertit un fichier PGM au format \doxylink{structPixmap}{Pixmap}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pgm__to__pixmap_8c_a91f3aca3fc911299092248b3ff9b97e0}{liberer\+\_\+pixmap}} (\mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*}pixmap)
+\begin{DoxyCompactList}\small\item\em Libère la mémoire occupée par une \doxylink{structPixmap}{Pixmap}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Conversion d\textquotesingle{}images PGM en structure \doxylink{structPixmap}{Pixmap}. 
+
+Définit les fonctions pour lire un fichier PGM et le convertir en une \doxylink{structPixmap}{Pixmap} manipulable. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pgm__to__pixmap_8c_adb3175085d5edd7d58b3ec46ae435904}\label{pgm__to__pixmap_8c_adb3175085d5edd7d58b3ec46ae435904} 
+\index{pgm\_to\_pixmap.c@{pgm\_to\_pixmap.c}!ignorer\_commentaires\_et\_espaces@{ignorer\_commentaires\_et\_espaces}}
+\index{ignorer\_commentaires\_et\_espaces@{ignorer\_commentaires\_et\_espaces}!pgm\_to\_pixmap.c@{pgm\_to\_pixmap.c}}
+\doxysubsubsection{\texorpdfstring{ignorer\_commentaires\_et\_espaces()}{ignorer\_commentaires\_et\_espaces()}}
+{\footnotesize\ttfamily static void ignorer\+\_\+commentaires\+\_\+et\+\_\+espaces (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{fp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Ignore les commentaires et les espaces dans un fichier. 
+
+Cette fonction lit un fichier, ignore les lignes commençant par {\ttfamily \#} ainsi que les espaces, tabulations et sauts de ligne.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fp} & Le fichier ouvert en lecture. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pgm__to__pixmap_8c_a91f3aca3fc911299092248b3ff9b97e0}\label{pgm__to__pixmap_8c_a91f3aca3fc911299092248b3ff9b97e0} 
+\index{pgm\_to\_pixmap.c@{pgm\_to\_pixmap.c}!liberer\_pixmap@{liberer\_pixmap}}
+\index{liberer\_pixmap@{liberer\_pixmap}!pgm\_to\_pixmap.c@{pgm\_to\_pixmap.c}}
+\doxysubsubsection{\texorpdfstring{liberer\_pixmap()}{liberer\_pixmap()}}
+{\footnotesize\ttfamily void liberer\+\_\+pixmap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*}}]{pixmap }\end{DoxyParamCaption})}
+
+
+
+Libère la mémoire occupée par une \doxylink{structPixmap}{Pixmap}. 
+
+Cette fonction libère la mémoire utilisée par la structure \doxylink{structPixmap}{Pixmap}, y compris celle des pixels.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pixmap} & Un pointeur vers la \doxylink{structPixmap}{Pixmap} à libérer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pgm__to__pixmap_8c_a07875707d82031882b8a8a846bc1de9c}\label{pgm__to__pixmap_8c_a07875707d82031882b8a8a846bc1de9c} 
+\index{pgm\_to\_pixmap.c@{pgm\_to\_pixmap.c}!pgm\_vers\_pixmap@{pgm\_vers\_pixmap}}
+\index{pgm\_vers\_pixmap@{pgm\_vers\_pixmap}!pgm\_to\_pixmap.c@{pgm\_to\_pixmap.c}}
+\doxysubsubsection{\texorpdfstring{pgm\_vers\_pixmap()}{pgm\_vers\_pixmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPixmap}{Pixmap}} \texorpdfstring{$\ast$}{*} pgm\+\_\+vers\+\_\+pixmap (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{fichier }\end{DoxyParamCaption})}
+
+
+
+Convertit un fichier PGM au format \doxylink{structPixmap}{Pixmap}. 
+
+Lit un fichier PGM au format binaire (P5) et crée une structure \doxylink{structPixmap}{Pixmap} contenant les dimensions et les pixels de l\textquotesingle{}image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fichier} & Le chemin du fichier PGM à lire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers une structure \doxylink{structPixmap}{Pixmap} en cas de succès, NULL sinon. 
+\end{DoxyReturn}

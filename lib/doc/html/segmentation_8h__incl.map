@@ -1,0 +1,8 @@
+<map id="include/segmentation.h" name="include/segmentation.h">
+<area shape="rect" id="Node000001" title="Génération de grilles de segmentation à partir de QuadTrees." alt="" coords="53,5,227,31"/>
+<area shape="rect" id="Node000002" href="$quadtree_8h.html" title="Déclarations pour la gestion des QuadTrees." alt="" coords="5,79,160,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,33,103,70,99,66,128,29"/>
+<area shape="rect" id="Node000003" href="$pixmap_8h.html" title="Manipulation d&#39;images en niveaux de gris (Pixmap)." alt="" coords="99,152,181,177"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="151,29,164,51,175,78,176,95,173,112,159,141,155,139,168,110,171,95,169,79,159,54,146,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="94,103,124,139,120,143,90,106"/>
+</map>

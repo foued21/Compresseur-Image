@@ -1,0 +1,25 @@
+\begin{theindex}
+
+  \item {coder\_fichier}
+    \subitem {qtc.h}, \hyperpage{4}
+
+  \indexspace
+
+  \item {decoder\_fichier}
+    \subitem {qtc.h}, \hyperpage{4}
+
+  \indexspace
+
+  \item {include/qtc.h}, \hyperpage{3, 4}
+
+  \indexspace
+
+  \item {qtc.h}
+    \subitem {coder\_fichier}, \hyperpage{4}
+    \subitem {decoder\_fichier}, \hyperpage{4}
+
+  \indexspace
+
+  \item {src/main.c}, \hyperpage{5}
+
+\end{theindex}

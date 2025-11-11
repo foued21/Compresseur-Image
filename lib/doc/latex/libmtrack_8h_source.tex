@@ -1,0 +1,29 @@
+\doxysection{libmtrack.\+h}
+\hypertarget{libmtrack_8h_source}{}\label{libmtrack_8h_source}\index{include/libmtrack.h@{include/libmtrack.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LIBMTRACK\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LIBMTRACK\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ malloc(size)\ \_traceur\_malloc(\_\_FILE\_\_,\ \_\_func\_\_,\ \_\_LINE\_\_,\ size)}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ free(ptr)\ \_traceur\_free(\_\_FILE\_\_,\ \_\_func\_\_,\ \_\_LINE\_\_,\ ptr)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ realloc(ptr,\ size)\ \_traceur\_realloc(\_\_FILE\_\_,\ \_\_func\_\_,\ \_\_LINE\_\_,\ ptr,\ size)}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ calloc(nmemb,\ size)\ \_traceur\_calloc(\_\_FILE\_\_,\ \_\_func\_\_,\ \_\_LINE\_\_,\ nmemb,\ size)}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ }
+\DoxyCodeLine{00016\ \textcolor{keywordtype}{void}*\ \_traceur\_malloc(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fichier,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fonction,\ \textcolor{keywordtype}{int}\ ligne,\ \textcolor{keywordtype}{size\_t}\ taille);\ \ \ }
+\DoxyCodeLine{00017\ \textcolor{keywordtype}{void}\ \_traceur\_free(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fichier,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fonction,\ \textcolor{keywordtype}{int}\ ligne,\ \textcolor{keywordtype}{void}*\ ptr);\ \ }
+\DoxyCodeLine{00018\ \textcolor{keywordtype}{void}*\ \_traceur\_realloc(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fichier,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fonction,\ \textcolor{keywordtype}{int}\ ligne,\ \textcolor{keywordtype}{void}*\ ptr,\ \textcolor{keywordtype}{size\_t}\ taille);}
+\DoxyCodeLine{00019\ \textcolor{keywordtype}{void}*\ \_traceur\_calloc(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fichier,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ fonction,\ \textcolor{keywordtype}{int}\ ligne,\ \textcolor{keywordtype}{size\_t}\ nmemb,\ \textcolor{keywordtype}{size\_t}\ taille);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

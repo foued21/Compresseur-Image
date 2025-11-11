@@ -1,0 +1,35 @@
+\doxysection{quadtree.\+h}
+\hypertarget{quadtree_8h_source}{}\label{quadtree_8h_source}\index{include/quadtree.h@{include/quadtree.h}}
+\mbox{\hyperlink{quadtree_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ QUADTREE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ QUADTREE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pixmap_8h}{pixmap.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structQuadNode_ac299608a9f5237a45c89ec34f234c93a}{m}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structQuadNode_ac5e072bad964b086050d5f8a451b4e3d}{epsilon}};\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structQuadNode_a6e56172a160b754940d061d628f59644}{u}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structQuadNode_ab9dfa2112421859e93e3136970af83bc}{v}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \}\ \mbox{\hyperlink{structQuadNode}{QuadNode}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structQuadTree_a96e62c89da02d563a80a490041981281}{depth}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structQuadTree_a3fccddff97efc71504230e74a3332339}{total\_nodes}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{structQuadNode}{QuadNode}}\ *\mbox{\hyperlink{structQuadTree_a7ed0dd67c74d6c8300e39c90f9a01b06}{nodes}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ \}\ \mbox{\hyperlink{structQuadTree}{QuadTree}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00053\ \mbox{\hyperlink{structQuadTree}{QuadTree}}*\ \mbox{\hyperlink{quadtree_8h_ae1ceb96647326ccb27cc06073ecafb50}{creer\_quadtree}}(\textcolor{keywordtype}{int}\ depth);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{quadtree_8h_a6ca4e4a1ff3d14889ebbd82a05088af9}{construire\_quadtree}}(\mbox{\hyperlink{structQuadTree}{QuadTree}}*\ tree,\ \mbox{\hyperlink{structPixmap}{Pixmap}}*\ pixmap,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ taille,\ \textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00079\ \mbox{\hyperlink{structPixmap}{Pixmap}}*\ \mbox{\hyperlink{quadtree_8h_a6a302852897aa6e92c25efb4a50c1212}{quadtree\_vers\_pixmap}}(\mbox{\hyperlink{structQuadTree}{QuadTree}}\ *tree);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{quadtree_8h_a5af84d7d1e39b7a12f7172fac9d20d93}{appliquer\_filtrage}}(\mbox{\hyperlink{structQuadTree}{QuadTree}}\ *tree,\ \textcolor{keywordtype}{double}\ alpha);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{quadtree_8h_a113d3b48c37bd4c74f0b838d5e834eea}{liberer\_quadtree}}(\mbox{\hyperlink{structQuadTree}{QuadTree}}\ *tree);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ QUADTREE\_H}}
+
+\end{DoxyCode}

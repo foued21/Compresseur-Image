@@ -1,0 +1,84 @@
+\doxysection{include/bitstream.h File Reference}
+\hypertarget{bitstream_8h}{}\label{bitstream_8h}\index{include/bitstream.h@{include/bitstream.h}}
+
+
+Manipulation des flux binaires.  
+
+
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+Include dependency graph for bitstream.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{bitstream_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structBitStream}{Bit\+Stream}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{bitstream_8h_a9e85ac9e97e6a4f09f6ed47f59fdc748}{pushbits}} (\mbox{\hyperlink{structBitStream}{Bit\+Stream}} \texorpdfstring{$\ast$}{*}curr, unsigned char src, size\+\_\+t nbit)
+\begin{DoxyCompactList}\small\item\em Écrit des bits dans un flux binaire. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{bitstream_8h_a219aaf9cd1c5ad28dd4169ed6f6d350d}{pullbits}} (\mbox{\hyperlink{structBitStream}{Bit\+Stream}} \texorpdfstring{$\ast$}{*}curr, unsigned char \texorpdfstring{$\ast$}{*}dest, size\+\_\+t nbit)
+\begin{DoxyCompactList}\small\item\em Lit des bits depuis un flux binaire. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manipulation des flux binaires. 
+
+Fournit des outils pour lire et écrire des bits dans des buffers binaires. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{bitstream_8h_a219aaf9cd1c5ad28dd4169ed6f6d350d}\label{bitstream_8h_a219aaf9cd1c5ad28dd4169ed6f6d350d} 
+\index{bitstream.h@{bitstream.h}!pullbits@{pullbits}}
+\index{pullbits@{pullbits}!bitstream.h@{bitstream.h}}
+\doxysubsubsection{\texorpdfstring{pullbits()}{pullbits()}}
+{\footnotesize\ttfamily size\+\_\+t pullbits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBitStream}{Bit\+Stream}} \texorpdfstring{$\ast$}{*}}]{curr,  }\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{size\+\_\+t}]{nbit }\end{DoxyParamCaption})}
+
+
+
+Lit des bits depuis un flux binaire. 
+
+Cette fonction extrait un certain nombre de bits depuis un flux binaire et les stocke dans une destination.
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr} & Le pointeur vers le flux binaire d\textquotesingle{}où lire les bits. \\
+\hline
+{\em dest} & Un pointeur vers la variable où stocker les bits lus. \\
+\hline
+{\em nbit} & Le nombre de bits à lire (au maximum 8). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Le nombre de bits effectivement lus. 
+\end{DoxyReturn}
+\Hypertarget{bitstream_8h_a9e85ac9e97e6a4f09f6ed47f59fdc748}\label{bitstream_8h_a9e85ac9e97e6a4f09f6ed47f59fdc748} 
+\index{bitstream.h@{bitstream.h}!pushbits@{pushbits}}
+\index{pushbits@{pushbits}!bitstream.h@{bitstream.h}}
+\doxysubsubsection{\texorpdfstring{pushbits()}{pushbits()}}
+{\footnotesize\ttfamily size\+\_\+t pushbits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBitStream}{Bit\+Stream}} \texorpdfstring{$\ast$}{*}}]{curr,  }\item[{unsigned char}]{src,  }\item[{size\+\_\+t}]{nbit }\end{DoxyParamCaption})}
+
+
+
+Écrit des bits dans un flux binaire. 
+
+Cette fonction écrit un certain nombre de bits à partir d\textquotesingle{}une source dans un flux binaire représenté par une structure {\ttfamily \doxylink{structBitStream}{Bit\+Stream}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr} & Le pointeur vers le flux binaire où écrire les bits. \\
+\hline
+{\em src} & La valeur source contenant les bits à écrire. \\
+\hline
+{\em nbit} & Le nombre de bits à écrire (au maximum 8). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Le nombre de bits effectivement écrits. 
+\end{DoxyReturn}
